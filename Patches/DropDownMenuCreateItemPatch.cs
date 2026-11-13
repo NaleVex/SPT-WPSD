@@ -13,10 +13,6 @@ namespace WeaponConfigStats.Patches
     /// </summary>
     public sealed class DropDownMenuCreateItemPatch : ModulePatch
     {
-        private static readonly FieldInfo SlotField = typeof(ModdingScreenSlotView).GetField(
-            "_slot",
-            BindingFlags.Instance | BindingFlags.NonPublic);
-
         protected override MethodBase GetTargetMethod()
         {
             return typeof(DropDownMenu).GetMethod(
@@ -39,20 +35,9 @@ namespace WeaponConfigStats.Patches
                 return;
             }
 
-            var installed = ResolveInstalledItem(DropDownMenuShowPatch.ActiveSlotView);
+            var installed = DropDownMenuShowPatch.ResolveInstalledItem(DropDownMenuShowPatch.ActiveSlotView);
             // Picker list: deltas vs installed when ShowDeltasVsInstalled is on.
             AttachmentStatOverlay.Attach(view, item, installed, allowDeltas: true);
-        }
-
-        private static Item ResolveInstalledItem(ModdingScreenSlotView slotView)
-        {
-            if (slotView == null || SlotField == null)
-            {
-                return null;
-            }
-
-            var slot = SlotField.GetValue(slotView) as Slot;
-            return slot?.ContainedItem;
         }
 
         private static ModdingSelectableItemView FindLatestView(RectTransform container)

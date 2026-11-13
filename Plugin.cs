@@ -21,6 +21,7 @@ namespace WeaponConfigStats
             Log = Logger;
             Settings = new ModConfig(Config);
             Selection = new StatSelectionService(Settings);
+            Selection.Changed += OnSelectionChanged;
 
             new CharacteristicsPanelShowPatch().Enable();
             new CharacteristicsPanelInstantiatePatch().Enable();
@@ -32,12 +33,25 @@ namespace WeaponConfigStats
 
             Log.LogInfo($"{PluginInfo.Name} v{PluginInfo.Version} loaded.");
         }
+
+        private void OnDestroy()
+        {
+            if (Selection != null)
+            {
+                Selection.Changed -= OnSelectionChanged;
+            }
+        }
+
+        private static void OnSelectionChanged()
+        {
+            DropDownMenuShowPatch.ApplyCurrentSort();
+        }
     }
 
     public static class PluginInfo
     {
         public const string Guid = "com.weaponconfigstats.client";
         public const string Name = "WeaponConfigStats";
-        public const string Version = "0.1.6";
+        public const string Version = "0.1.10";
     }
 }
