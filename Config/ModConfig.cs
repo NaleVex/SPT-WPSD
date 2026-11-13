@@ -26,7 +26,7 @@ namespace WeaponConfigStats.Config
                 "Display",
                 "ShowDeltasVsInstalled",
                 true,
-                "If true, overlay shows delta vs currently installed part; otherwise absolute part contribution.");
+                "If true, dropdown picker tiles show delta vs the installed part. Equipped slot tiles always show absolute contribution.");
 
             EnabledStatsCsv = config.Bind(
                 "Display",

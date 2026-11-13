@@ -20,12 +20,19 @@ namespace WeaponConfigStats.UI
         private float _captionAlpha = 1f;
         private Item _item;
         private Item _installed;
+        /// <summary>True for dropdown candidates; false for the equipped slot tile.</summary>
+        private bool _allowDeltas;
 
-        public void Bind(ModdingSelectableItemView view, Item item, Item installedInSlot)
+        public void Bind(
+            ModdingSelectableItemView view,
+            Item item,
+            Item installedInSlot,
+            bool allowDeltas)
         {
             _view = view;
             _item = item;
             _installed = installedInSlot;
+            _allowDeltas = allowDeltas;
             EnsureCaption();
             EnsureLabel(view);
             Refresh();
@@ -72,7 +79,9 @@ namespace WeaponConfigStats.UI
             }
 
             var selection = Plugin.Selection;
-            var values = AttachmentStatResolver.Resolve(_item, _installed, selection.ShowDeltas);
+            // Slot tiles always show absolute contribution; deltas only in the picker list.
+            var asDelta = _allowDeltas && selection.ShowDeltas;
+            var values = AttachmentStatResolver.Resolve(_item, _installed, asDelta);
             var sb = new StringBuilder();
             foreach (var id in selection.EnabledStats)
             {
@@ -86,7 +95,7 @@ namespace WeaponConfigStats.UI
                     sb.Append('\n');
                 }
 
-                sb.Append(AttachmentStatResolver.FormatOverlayLine(id, value, selection.ShowDeltas));
+                sb.Append(AttachmentStatResolver.FormatOverlayLine(id, value, asDelta));
             }
 
             _label.text = sb.ToString();
@@ -170,7 +179,11 @@ namespace WeaponConfigStats.UI
             _label.text = string.Empty;
         }
 
-        public static void Attach(ModdingSelectableItemView view, Item item, Item installedInSlot)
+        public static void Attach(
+            ModdingSelectableItemView view,
+            Item item,
+            Item installedInSlot,
+            bool allowDeltas)
         {
             if (view == null || item == null)
             {
@@ -183,7 +196,7 @@ namespace WeaponConfigStats.UI
                 overlay = view.gameObject.AddComponent<AttachmentStatOverlay>();
             }
 
-            overlay.Bind(view, item, installedInSlot);
+            overlay.Bind(view, item, installedInSlot, allowDeltas);
         }
     }
 }

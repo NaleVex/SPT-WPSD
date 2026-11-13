@@ -53,7 +53,8 @@ namespace WeaponConfigStats.Patches
 
             var slot = SlotField?.GetValue(__instance) as Slot;
             var installed = slot?.ContainedItem;
-            AttachmentStatOverlay.Attach(view, item, installed);
+            // Equipped slot tile: always absolute stats (delta vs self would be 0).
+            AttachmentStatOverlay.Attach(view, item, installed, allowDeltas: false);
         }
     }
 }

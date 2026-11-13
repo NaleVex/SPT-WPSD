@@ -40,7 +40,8 @@ namespace WeaponConfigStats.Patches
             }
 
             var installed = ResolveInstalledItem(DropDownMenuShowPatch.ActiveSlotView);
-            AttachmentStatOverlay.Attach(view, item, installed);
+            // Picker list: deltas vs installed when ShowDeltasVsInstalled is on.
+            AttachmentStatOverlay.Attach(view, item, installed, allowDeltas: true);
         }
 
         private static Item ResolveInstalledItem(ModdingScreenSlotView slotView)
