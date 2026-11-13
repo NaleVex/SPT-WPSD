@@ -90,16 +90,35 @@ namespace WeaponConfigStats.Services
             return result;
         }
 
+        public static bool IsPercentStat(WeaponStatId id)
+        {
+            switch (id)
+            {
+                case WeaponStatId.VerticalRecoil:
+                case WeaponStatId.HorizontalRecoil:
+                case WeaponStatId.MuzzleVelocity:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public static string FormatOverlayLine(WeaponStatId id, float value, bool asDelta)
         {
             var label = ShortLabel(id);
+            var number = FormatNumber(id, value);
+            if (IsPercentStat(id))
+            {
+                number += "%";
+            }
+
             if (asDelta)
             {
                 var sign = value > 0f ? "+" : string.Empty;
-                return $"{label} {sign}{FormatNumber(id, value)}";
+                return $"{label} {sign}{number}";
             }
 
-            return $"{label} {FormatNumber(id, value)}";
+            return $"{label} {number}";
         }
 
         public static string ShortLabel(WeaponStatId id)
@@ -122,19 +141,46 @@ namespace WeaponConfigStats.Services
 
         private static string FormatNumber(WeaponStatId id, float value)
         {
+            // Integer-ish stats stay whole; float stats use OverlayDecimalPlaces (default 1 -> 1.0).
+            if (IsIntegerStat(id))
+            {
+                return UnityEngine.Mathf.RoundToInt(value).ToString();
+            }
+
+            var places = 1;
+            if (Plugin.Settings?.OverlayDecimalPlaces != null)
+            {
+                places = Plugin.Settings.OverlayDecimalPlaces.Value;
+            }
+
+            if (places < 0)
+            {
+                places = 0;
+            }
+            else if (places > 4)
+            {
+                places = 4;
+            }
+
+            if (places == 0)
+            {
+                return UnityEngine.Mathf.RoundToInt(value).ToString();
+            }
+
+            return value.ToString("0." + new string('0', places));
+        }
+
+        private static bool IsIntegerStat(WeaponStatId id)
+        {
             switch (id)
             {
-                case WeaponStatId.Weight:
-                    return value.ToString("0.##");
-                case WeaponStatId.Ergonomics:
-                case WeaponStatId.VerticalRecoil:
-                case WeaponStatId.HorizontalRecoil:
-                case WeaponStatId.MuzzleVelocity:
-                    return value.ToString("0.#");
-                case WeaponStatId.Accuracy:
-                    return value.ToString("0.##");
+                case WeaponStatId.SightingRange:
+                case WeaponStatId.RateOfFire:
+                case WeaponStatId.EffectiveDistance:
+                case WeaponStatId.Durability:
+                    return true;
                 default:
-                    return value.ToString("0.#");
+                    return false;
             }
         }
 

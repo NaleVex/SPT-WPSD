@@ -100,6 +100,7 @@ namespace WeaponConfigStats.UI
 
             _label.text = sb.ToString();
             _label.fontSize = Plugin.Settings.OverlayFontSize.Value;
+            _label.color = Plugin.Settings.OverlayColor.Value;
 
             _hideCaption = sb.Length > 0;
             EnsureCaption();
@@ -173,8 +174,8 @@ namespace WeaponConfigStats.UI
 
             _label = go.AddComponent<TextMeshProUGUI>();
             _label.alignment = TextAlignmentOptions.TopLeft;
-            _label.fontSize = 12f;
-            _label.color = new Color(1f, 0.85f, 0.35f, 1f);
+            _label.fontSize = Plugin.Settings?.OverlayFontSize.Value ?? 12f;
+            _label.color = Plugin.Settings?.OverlayColor.Value ?? Color.white;
             _label.raycastTarget = false;
             _label.text = string.Empty;
         }

@@ -9,11 +9,14 @@ Client BepInEx mod for weapon configurator tools:
 
 ## Status
 
-`v0.1.10`:
+`v0.1.13`:
 
 - Harmony hooks compile and load
 - Toolbar controls and tile overlays are live
 - `AttachmentStatResolver` reads Mod properties / item attributes
+- Percent-type overlay stats (`VRec` / `HRec` / `Vel`) append `%`
+- Overlay text defaults to white; color configurable via F12 `OverlayColor`
+- Float overlay values use fixed decimals (default 1 → `1.0`); F12 `OverlayDecimalPlaces` (0–4)
 - Live dropdown reordering via `AttachmentListSorter.ApplyToOpenMenu`
 
 ## Build

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using BepInEx.Configuration;
+using UnityEngine;
 using WeaponConfigStats.Models;
 
 namespace WeaponConfigStats.Config
@@ -13,6 +14,8 @@ namespace WeaponConfigStats.Config
         public ConfigEntry<WeaponStatId> SortStat { get; }
         public ConfigEntry<SortDirection> SortDirection { get; }
         public ConfigEntry<float> OverlayFontSize { get; }
+        public ConfigEntry<Color> OverlayColor { get; }
+        public ConfigEntry<int> OverlayDecimalPlaces { get; }
 
         public ModConfig(ConfigFile config)
         {
@@ -51,6 +54,20 @@ namespace WeaponConfigStats.Config
                 "OverlayFontSize",
                 12f,
                 new ConfigDescription("Font size for tile overlays.", new AcceptableValueRange<float>(8f, 24f)));
+
+            OverlayColor = config.Bind(
+                "Display",
+                "OverlayColor",
+                Color.white,
+                "Color for attachment tile overlay text.");
+
+            OverlayDecimalPlaces = config.Bind(
+                "Display",
+                "OverlayDecimalPlaces",
+                1,
+                new ConfigDescription(
+                    "Decimal places for overlay float values (always shown; e.g. 1 -> 1.0, 2 -> 1.25).",
+                    new AcceptableValueRange<int>(0, 4)));
         }
 
         public HashSet<WeaponStatId> GetEnabledStats()

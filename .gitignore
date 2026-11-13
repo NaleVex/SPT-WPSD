@@ -1,5 +1,6 @@
 bin/
 obj/
+_ilpeek/
 *.user
 *.suo
 *.userosscache

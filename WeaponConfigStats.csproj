@@ -8,7 +8,7 @@
     <Nullable>disable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Deterministic>true</Deterministic>
-    <Version>0.1.10</Version>
+    <Version>0.1.13</Version>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
   </PropertyGroup>
@@ -22,6 +22,12 @@
     <SptBepInExSptDir>$(SptBepInExPluginsDir)spt\</SptBepInExSptDir>
     <DeployDir>$(SptBepInExPluginsDir)WeaponConfigStats\</DeployDir>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_ilpeek\**" />
+    <EmbeddedResource Remove="_ilpeek\**" />
+    <None Remove="_ilpeek\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">

@@ -22,6 +22,9 @@ namespace WeaponConfigStats
             Settings = new ModConfig(Config);
             Selection = new StatSelectionService(Settings);
             Selection.Changed += OnSelectionChanged;
+            Settings.OverlayColor.SettingChanged += (_, __) => OnSelectionChanged();
+            Settings.OverlayFontSize.SettingChanged += (_, __) => OnSelectionChanged();
+            Settings.OverlayDecimalPlaces.SettingChanged += (_, __) => OnSelectionChanged();
 
             new CharacteristicsPanelShowPatch().Enable();
             new CharacteristicsPanelInstantiatePatch().Enable();
@@ -52,6 +55,6 @@ namespace WeaponConfigStats
     {
         public const string Guid = "com.weaponconfigstats.client";
         public const string Name = "WeaponConfigStats";
-        public const string Version = "0.1.10";
+        public const string Version = "0.1.13";
     }
 }
