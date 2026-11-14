@@ -3,9 +3,9 @@ using EFT.InventoryLogic;
 using EFT.UI.DragAndDrop;
 using TMPro;
 using UnityEngine;
-using WeaponConfigStats.Services;
+using WPSD.Services;
 
-namespace WeaponConfigStats.UI
+namespace WPSD.UI
 {
     /// <summary>
     /// Overlay on ModdingSelectableItemView tiles.
@@ -162,7 +162,7 @@ namespace WeaponConfigStats.UI
                 return;
             }
 
-            var go = new GameObject("WeaponConfigStats_Overlay", typeof(RectTransform));
+            var go = new GameObject("WPSD_Overlay", typeof(RectTransform));
             go.transform.SetParent(view.transform, false);
 
             var rt = go.GetComponent<RectTransform>();

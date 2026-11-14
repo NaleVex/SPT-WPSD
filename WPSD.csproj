@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>WeaponConfigStats</AssemblyName>
-    <RootNamespace>WeaponConfigStats</RootNamespace>
+    <AssemblyName>WPSD</AssemblyName>
+    <RootNamespace>WPSD</RootNamespace>
     <Description>Weapon Parts Stats Display — attachment overlays, toggles, and sorting</Description>
     <LangVersion>9.0</LangVersion>
     <Nullable>disable</Nullable>
@@ -14,13 +14,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!-- Project lives at SPT/Development/WeaponConfigStats -->
+    <!-- Project lives under SPT/Development/ (WPSD / Weapon Parts Stats Display) -->
     <SptDir Condition="'$(SptDir)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\..\..\'))</SptDir>
     <SptManagedDir>$(SptDir)EscapeFromTarkov_Data\Managed\</SptManagedDir>
     <SptBepInExCoreDir>$(SptDir)BepInEx\core\</SptBepInExCoreDir>
     <SptBepInExPluginsDir>$(SptDir)BepInEx\plugins\</SptBepInExPluginsDir>
     <SptBepInExSptDir>$(SptBepInExPluginsDir)spt\</SptBepInExSptDir>
-    <DeployDir>$(SptBepInExPluginsDir)WeaponConfigStats\</DeployDir>
+    <DeployDir>$(SptBepInExPluginsDir)WPSD\</DeployDir>
   </PropertyGroup>
 
   <ItemGroup>

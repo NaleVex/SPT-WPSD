@@ -4,9 +4,9 @@ using EFT.UI.DragAndDrop;
 using EFT.UI.WeaponModding;
 using SPT.Reflection.Patching;
 using UnityEngine;
-using WeaponConfigStats.UI;
+using WPSD.UI;
 
-namespace WeaponConfigStats.Patches
+namespace WPSD.Patches
 {
     /// <summary>
     /// After each attachment tile is created in the dropdown, attach the orange-area overlay.

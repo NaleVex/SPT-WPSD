@@ -1,9 +1,9 @@
 using System.Reflection;
 using EFT.UI;
 using SPT.Reflection.Patching;
-using WeaponConfigStats.UI;
+using WPSD.UI;
 
-namespace WeaponConfigStats.Patches
+namespace WPSD.Patches
 {
     /// <summary>
     /// Compact rows often exist while _characteristics is collapsed (inactive hierarchy).

@@ -6,7 +6,7 @@ Client BepInEx mod for **SPT 4.1.6** that shows attachment stats in the weapon c
 |--|--|
 | **Author** | FunApple |
 | **Plugin name** | `FunApple-WeaponPartsStatsDisplay` |
-| **GUID** | `com.funapple.weaponconfigstats` |
+| **GUID** | `com.funapple.wpsd` |
 | **Version** | `1.0.1` |
 | **Type** | Client only |
 | **Dependencies** | SPT (`com.SPT.core` / BepInEx) |
@@ -31,7 +31,7 @@ Toolbar toggles are not shown for durability, fire rate, or effective distance.
 2. Extract it into your SPT root folder (the folder that contains `BepInEx` and `EscapeFromTarkov.exe`).
 3. Confirm this path exists after extract:
 
-   `BepInEx/plugins/WeaponConfigStats/WeaponConfigStats.dll`
+   `BepInEx/plugins/WPSD/WPSD.dll`
 
 4. Launch the game. Open F12 → **FunApple-WeaponPartsStatsDisplay** to configure.
 
@@ -53,11 +53,11 @@ Toolbar toggles are not shown for durability, fire rate, or effective distance.
 
 ## Uninstall
 
-Delete `BepInEx/plugins/WeaponConfigStats/` and optionally `BepInEx/config/com.funapple.weaponconfigstats.cfg`.
+Delete `BepInEx/plugins/WPSD/` and optionally `BepInEx/config/com.funapple.wpsd.cfg`.
 
 ## Build (developers)
 
-Requires a local SPT install next to this repo (or set `SptDir` when building). The `.csproj` defaults to two folders up from this project (`SPT/Development/WeaponConfigStats` → SPT root).
+Requires a local SPT install next to this repo (or set `SptDir` when building). The `.csproj` defaults to two folders up from this project → SPT root.
 
 ```powershell
 dotnet build -c Release
@@ -65,7 +65,7 @@ dotnet build -c Release
 
 Release output is copied to:
 
-`BepInEx/plugins/WeaponConfigStats/WeaponConfigStats.dll`
+`BepInEx/plugins/WPSD/WPSD.dll`
 
 ## Project layout
 
@@ -84,6 +84,7 @@ Release output is copied to:
 
 - Author / Forge nickname: **FunApple**
 - Forge-compliant plugin name: `FunApple-WeaponPartsStatsDisplay`
+- Assembly / plugin folder / GUID use **WPSD** (`com.funapple.wpsd`, `BepInEx/plugins/WPSD/WPSD.dll`)
 - Removed toolbar toggles for durability, fire rate, and effective distance
 - Accuracy and muzzle velocity overlays format as percentages
 

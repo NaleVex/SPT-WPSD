@@ -2,7 +2,7 @@ using System.Reflection;
 using EFT.UI.WeaponModding;
 using SPT.Reflection.Patching;
 
-namespace WeaponConfigStats.Patches
+namespace WPSD.Patches
 {
     public sealed class DropDownMenuClosePatch : ModulePatch
     {

@@ -4,9 +4,9 @@ using EFT.UI.DragAndDrop;
 using EFT.UI.WeaponModding;
 using SPT.Reflection.Patching;
 using UnityEngine;
-using WeaponConfigStats.UI;
+using WPSD.UI;
 
-namespace WeaponConfigStats.Patches
+namespace WPSD.Patches
 {
     /// <summary>
     /// Slot icon for the currently installed / selected part (not the dropdown list).

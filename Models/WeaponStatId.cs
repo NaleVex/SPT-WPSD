@@ -1,4 +1,4 @@
-namespace WeaponConfigStats.Models
+namespace WPSD.Models
 {
     /// <summary>
     /// Stats we can toggle/sort/overlay. Maps loosely to EItemAttributeId / CharacteristicsPanel rows.

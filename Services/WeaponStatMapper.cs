@@ -1,8 +1,8 @@
 using System;
 using EFT.InventoryLogic;
-using WeaponConfigStats.Models;
+using WPSD.Models;
 
-namespace WeaponConfigStats.Services
+namespace WPSD.Services
 {
     public static class WeaponStatMapper
     {

@@ -2,9 +2,9 @@ using System.Reflection;
 using EFT.InventoryLogic;
 using EFT.UI;
 using SPT.Reflection.Patching;
-using WeaponConfigStats.UI;
+using WPSD.UI;
 
-namespace WeaponConfigStats.Patches
+namespace WPSD.Patches
 {
     public sealed class CharacteristicsPanelShowPatch : ModulePatch
     {

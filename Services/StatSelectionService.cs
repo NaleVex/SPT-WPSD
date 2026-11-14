@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using WeaponConfigStats.Config;
-using WeaponConfigStats.Models;
+using WPSD.Config;
+using WPSD.Models;
 
-namespace WeaponConfigStats.Services
+namespace WPSD.Services
 {
     /// <summary>
     /// Runtime selection state for toggles / sort. Persists through ModConfig (F12).

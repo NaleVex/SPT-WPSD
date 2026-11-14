@@ -6,9 +6,9 @@ using EFT.UI.DragAndDrop;
 using EFT.UI.WeaponModding;
 using UnityEngine;
 using UnityEngine.UI;
-using WeaponConfigStats.Models;
+using WPSD.Models;
 
-namespace WeaponConfigStats.Services
+namespace WPSD.Services
 {
     /// <summary>
     /// Reorders attachment dropdown tiles by a selected weapon stat.

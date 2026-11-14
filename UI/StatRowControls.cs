@@ -3,9 +3,9 @@ using EFT.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using WeaponConfigStats.Models;
+using WPSD.Models;
 
-namespace WeaponConfigStats.UI
+namespace WPSD.UI
 {
     /// <summary>
     /// Per-stat eye + sort buttons injected beside a CharacteristicsPanel row (green area).

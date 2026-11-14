@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using BepInEx.Configuration;
 using UnityEngine;
-using WeaponConfigStats.Models;
-using WeaponConfigStats.Services;
+using WPSD.Models;
+using WPSD.Services;
 
-namespace WeaponConfigStats.Config
+namespace WPSD.Config
 {
     public sealed class ModConfig
     {

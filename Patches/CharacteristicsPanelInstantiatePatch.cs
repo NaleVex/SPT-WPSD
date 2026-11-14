@@ -2,9 +2,9 @@ using System.Reflection;
 using EFT.InventoryLogic;
 using EFT.UI;
 using SPT.Reflection.Patching;
-using WeaponConfigStats.UI;
+using WPSD.UI;
 
-namespace WeaponConfigStats.Patches
+namespace WPSD.Patches
 {
     /// <summary>
     /// Compact rows are rebuilt here after slot compare / refresh — schedule toolbar rebuild only

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using EFT.InventoryLogic;
-using WeaponConfigStats.Models;
+using WPSD.Models;
 
-namespace WeaponConfigStats.Services
+namespace WPSD.Services
 {
     /// <summary>
     /// Reads attachment contributions from Mod properties and Item.Attributes.

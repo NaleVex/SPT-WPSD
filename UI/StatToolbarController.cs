@@ -4,10 +4,10 @@ using System.Reflection;
 using EFT.InventoryLogic;
 using EFT.UI;
 using UnityEngine;
-using WeaponConfigStats.Models;
-using WeaponConfigStats.Services;
+using WPSD.Models;
+using WPSD.Services;
 
-namespace WeaponConfigStats.UI
+namespace WPSD.UI
 {
     /// <summary>
     /// Toggle/sort controls on the left side of each numeric characteristic row.
@@ -115,7 +115,7 @@ namespace WeaponConfigStats.UI
             var orphans = new List<GameObject>();
             foreach (var t in _panel.GetComponentsInChildren<Transform>(true))
             {
-                if (t != null && t.name.StartsWith("WeaponConfigStats_Row_"))
+                if (t != null && t.name.StartsWith("WPSD_Row_"))
                 {
                     orphans.Add(t.gameObject);
                 }
@@ -191,7 +191,7 @@ namespace WeaponConfigStats.UI
                 }
 
                 mapped++;
-                var rowGo = new GameObject($"WeaponConfigStats_Row_{statId}", typeof(RectTransform));
+                var rowGo = new GameObject($"WPSD_Row_{statId}", typeof(RectTransform));
                 rowGo.transform.SetParent(rowRt, false);
 
                 var rt = rowGo.GetComponent<RectTransform>();

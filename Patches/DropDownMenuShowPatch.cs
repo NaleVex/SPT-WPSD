@@ -3,9 +3,9 @@ using System.Reflection;
 using EFT.InventoryLogic;
 using EFT.UI.WeaponModding;
 using SPT.Reflection.Patching;
-using WeaponConfigStats.Services;
+using WPSD.Services;
 
-namespace WeaponConfigStats.Patches
+namespace WPSD.Patches
 {
     /// <summary>
     /// Tracks the open attachment dropdown and applies active sort after the list is built.

@@ -1,10 +1,10 @@
 using BepInEx;
 using BepInEx.Logging;
-using WeaponConfigStats.Config;
-using WeaponConfigStats.Patches;
-using WeaponConfigStats.Services;
+using WPSD.Config;
+using WPSD.Patches;
+using WPSD.Services;
 
-namespace WeaponConfigStats
+namespace WPSD
 {
     [BepInPlugin(PluginInfo.Guid, PluginInfo.Name, PluginInfo.Version)]
     [BepInDependency("com.SPT.core", BepInDependency.DependencyFlags.HardDependency)]
@@ -54,7 +54,7 @@ namespace WeaponConfigStats
     public static class PluginInfo
     {
         // Forge: GUID must match the upload form; Name must be Username-ModName (letters/numbers/one dash).
-        public const string Guid = "com.funapple.weaponconfigstats";
+        public const string Guid = "com.funapple.wpsd";
         public const string Name = "FunApple-WeaponPartsStatsDisplay";
         public const string Version = "1.0.1";
     }
