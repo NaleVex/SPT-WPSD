@@ -53,8 +53,9 @@ namespace WeaponConfigStats
 
     public static class PluginInfo
     {
-        public const string Guid = "com.weaponconfigstats.client";
-        public const string Name = "WeaponConfigStats";
-        public const string Version = "0.1.13";
+        // Forge: GUID must match the upload form; Name must be Username-ModName (letters/numbers/one dash).
+        public const string Guid = "com.nalevex.weaponconfigstats";
+        public const string Name = "NaleVex-WeaponPartsStatsDisplay";
+        public const string Version = "1.0.1";
     }
 }

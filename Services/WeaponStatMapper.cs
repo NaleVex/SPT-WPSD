@@ -16,10 +16,6 @@ namespace WeaponConfigStats.Services
 
             switch (attr)
             {
-                case EItemAttributeId.Durability:
-                case EItemAttributeId.MaxDurability:
-                    statId = WeaponStatId.Durability;
-                    return true;
                 case EItemAttributeId.Weight:
                     statId = WeaponStatId.Weight;
                     return true;
@@ -44,16 +40,22 @@ namespace WeaponConfigStats.Services
                 case EItemAttributeId.BulletSpeed:
                     statId = WeaponStatId.MuzzleVelocity;
                     return true;
-                case EItemAttributeId.FireRate:
-                case EItemAttributeId.SingleFireRate:
-                    statId = WeaponStatId.RateOfFire;
-                    return true;
-                case EItemAttributeId.EffectiveDist:
-                case EItemAttributeId.EffectiveDistance:
-                    statId = WeaponStatId.EffectiveDistance;
-                    return true;
+                // Durability / fire rate / effective distance: no toolbar toggles or overlays.
                 default:
                     return false;
+            }
+        }
+
+        public static bool SupportsToolbar(WeaponStatId id)
+        {
+            switch (id)
+            {
+                case WeaponStatId.Durability:
+                case WeaponStatId.RateOfFire:
+                case WeaponStatId.EffectiveDistance:
+                    return false;
+                default:
+                    return true;
             }
         }
     }

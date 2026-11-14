@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BepInEx.Configuration;
 using UnityEngine;
 using WeaponConfigStats.Models;
+using WeaponConfigStats.Services;
 
 namespace WeaponConfigStats.Config
 {
@@ -76,7 +77,8 @@ namespace WeaponConfigStats.Config
             var raw = EnabledStatsCsv.Value ?? string.Empty;
             foreach (var part in raw.Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                if (Enum.TryParse(part.Trim(), ignoreCase: true, out WeaponStatId id))
+                if (Enum.TryParse(part.Trim(), ignoreCase: true, out WeaponStatId id)
+                    && WeaponStatMapper.SupportsToolbar(id))
                 {
                     result.Add(id);
                 }

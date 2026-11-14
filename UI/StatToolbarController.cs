@@ -172,7 +172,8 @@ namespace WeaponConfigStats.UI
                     continue;
                 }
 
-                if (!WeaponStatMapper.TryMap(attribute.Id, out var statId))
+                if (!WeaponStatMapper.TryMap(attribute.Id, out var statId)
+                    || !WeaponStatMapper.SupportsToolbar(statId))
                 {
                     unmapped++;
                     continue;

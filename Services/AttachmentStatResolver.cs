@@ -57,7 +57,6 @@ namespace WeaponConfigStats.Services
                 Set(result, WeaponStatId.HorizontalRecoil, mod.Recoil);
                 Set(result, WeaponStatId.SightingRange, mod.SightingRange);
                 Set(result, WeaponStatId.MuzzleVelocity, mod.Velocity);
-                Set(result, WeaponStatId.EffectiveDistance, mod.EffectiveDistance);
                 Set(result, WeaponStatId.Weight, mod.Weight);
             }
             else
@@ -94,6 +93,7 @@ namespace WeaponConfigStats.Services
         {
             switch (id)
             {
+                case WeaponStatId.Accuracy:
                 case WeaponStatId.VerticalRecoil:
                 case WeaponStatId.HorizontalRecoil:
                 case WeaponStatId.MuzzleVelocity:
