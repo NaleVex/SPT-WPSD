@@ -4,8 +4,9 @@ Client BepInEx mod for **SPT 4.1.6** that shows attachment stats in the weapon c
 
 | | |
 |--|--|
-| **Plugin name** | `NaleVex-WeaponPartsStatsDisplay` |
-| **GUID** | `com.nalevex.weaponconfigstats` |
+| **Author** | FunApple |
+| **Plugin name** | `FunApple-WeaponPartsStatsDisplay` |
+| **GUID** | `com.funapple.weaponconfigstats` |
 | **Version** | `1.0.1` |
 | **Type** | Client only |
 | **Dependencies** | SPT (`com.SPT.core` / BepInEx) |
@@ -32,7 +33,7 @@ Toolbar toggles are not shown for durability, fire rate, or effective distance.
 
    `BepInEx/plugins/WeaponConfigStats/WeaponConfigStats.dll`
 
-4. Launch the game. Open F12 → **NaleVex-WeaponPartsStatsDisplay** to configure.
+4. Launch the game. Open F12 → **FunApple-WeaponPartsStatsDisplay** to configure.
 
 ## Usage
 
@@ -52,7 +53,7 @@ Toolbar toggles are not shown for durability, fire rate, or effective distance.
 
 ## Uninstall
 
-Delete `BepInEx/plugins/WeaponConfigStats/` and optionally `BepInEx/config/com.nalevex.weaponconfigstats.cfg`.
+Delete `BepInEx/plugins/WeaponConfigStats/` and optionally `BepInEx/config/com.funapple.weaponconfigstats.cfg`.
 
 ## Build (developers)
 
@@ -70,7 +71,7 @@ Release output is copied to:
 
 | Path | Role |
 |------|------|
-| `Plugin.cs` | BepInEx entry (`NaleVex-WeaponPartsStatsDisplay` / `1.0.1`) |
+| `Plugin.cs` | BepInEx entry (`FunApple-WeaponPartsStatsDisplay` / `1.0.1`) |
 | `Config/ModConfig.cs` | F12 settings |
 | `Models/` | Stat IDs, sort enums |
 | `Services/` | Selection, resolver, sorter |
@@ -81,8 +82,8 @@ Release output is copied to:
 
 ### 1.0.1
 
-- Display name branding: **Weapon Parts Stats Display** (WPSD)
-- Forge-compliant plugin name: `NaleVex-WeaponPartsStatsDisplay`
+- Author / Forge nickname: **FunApple**
+- Forge-compliant plugin name: `FunApple-WeaponPartsStatsDisplay`
 - Removed toolbar toggles for durability, fire rate, and effective distance
 - Accuracy and muzzle velocity overlays format as percentages
 
